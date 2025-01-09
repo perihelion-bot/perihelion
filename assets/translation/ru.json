@@ -112,7 +112,7 @@
     "command_rngsim_desc": "1XHELION",
   
     "command_roll": "кость",
-    "command_roll_desc": "Кидает один или несколько игральных костей.",
+    "command_roll_desc": "Кидает одну или несколько игральных костей.",
     "command_roll_rolls": "кол-во",
     "command_roll_rolls_desc": "Сколько костей кинуть?.",
   
