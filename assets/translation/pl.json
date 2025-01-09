@@ -1,2 +1,223 @@
 {
+  "generic_success": "sukces",
+  "generic_error": "Błąd!",
+
+  "command_8ball": "ósemka",
+  "command_8ball_desc": "Zapytaj dowolne pytanie magicznej ósemce.",
+  "command_8ball_query": "pytanie",
+  "command_8ball_query_desc": "Pytanie na które magiczna ósemka ma odpowiedzieć.",
+
+  "command_avatar": "awatar",
+  "command_avatar_ctxmenu": "Pobierz awatar",
+  "command_avatar_desc": "Pokazuje awatar użytkownika.",
+  "command_avatar_user": "użytkownik",
+  "command_avatar_user_desc": "Użytkownik od którego pobrać awatar.",
+  "command_avatar_crop": "przytnij",
+  "command_avatar_crop_desc": "Czy awatar powinien być przycięty na kształt okręgu?",
+
+  "command_calc": "kalkulator",
+  "command_calc_desc": "Wykonuje równanie.",
+  "command_calc_equ": "równanie",
+  "command_calc_equ_desc": "Równanie do rozwiązania [np. \"2+2\"]",
+
+  "command_caption": "napis",
+  "command_caption_desc": "Dodaj napis nad obrazem.",
+  "command_caption_caption": "napis",
+  "command_caption_caption_desc": "Napis do dodania.",
+  "command_caption_image": "obraz",
+  "command_caption_image_desc": "Obraz do którego dodać napis.",
+  "command_caption_typ": "typ",
+  "command_caption_choice_default": "Domyślny",
+
+  "caption_not_image": "Załączony plik nie jest obrazem!",
+
+  "command_choose": "wybierz",
+  "command_choose_desc": "Wybierz jedną lub więcej opcji.",
+  "command_choose_options": "opcje",
+  "command_choose_options_desc": "Lista opcji dzielona przez średniki.",
+  "command_choose_count": "liczba",
+  "command_choose_count_desc": "Liczba opcji do wybrania.",
+  "command_choose_unique": "unikatowe",
+  "command_choose_unique_desc": "Jeśli ustawione na fałsz, opcje mogą być wybrane wiele razy.",
+
+  "choose_lets_pick": "wybierzmy... %1%.",
+  "choose_too_many_choices": "Za dużo opcji! (Wyłącz opcję 'unikatowe' jeśli chcesz wybrać wiele opcji)",
+  "choose_zero_choices": "Poproszono o 0 lub ujemną liczbę opcji!",
+
+  "command_define": "zdefiniuj",
+  "command_define_desc": "Zdefiniuj słowo. Korzysta z Wiktionary do pobierania informacji.",
+
+  "command_distance": "odległość",
+  "command_distance_desc": "Jak daleko jesteś od słońca?",
+
+  "command_echo": "echo",
+  "command_echo_desc": "Wysyła twoją wiadomość spowrotem, z oznaczeniem użytkownika wysyłającego.",
+  "command_echo_message": "wiadomość",
+  "command_echo_message_desc": "Wiadomość do przekazania.",
+
+  "command_game": "gra",
+  "command_game_tictactoe": "kółkoikrzyżyk",
+  "command_game_tictactoe_size": "rozmiar",
+  "command_game_tictactoe_size_desc": "Rozmiar planszy od 3 do 5.",
+  "command_game_tictactoe_row": "rząd",
+  "command_game_tictactoe_row_desc": "Liczba liter w rzędzie potrzebnej do wygranej. Domyslnie ustawione na szerokość planszy.",
+  "command_game_tictactoe_misere": "mizerka",
+  "command_game_tictactoe_misere_desc": "Odwraca zwycięzcę i przegranego - jeśli ta opcja jest włączona to chcesz **przegrać**!",
+
+  "tictactoe_row_oversize": "Szerokość rzędu musi być mniejsza bądź równa rozmiaru planszy!",
+
+  "command_info": "info",
+  "command_info_desc": "Pokazuje informacje na temat bota i kolaboratorów.",
+
+  "command_note": "notatki",
+
+  "command_note_create": "stwórz",
+  "command_note_create_desc": "Tworzy nową notatkę.",
+
+  "command_note_edit": "edytuj",
+  "command_note_edit_desc": "Edytuj istniejącą notatke.",
+
+  "command_note_read": "pokaż",
+  "command_note_read_desc": "Pokazuje notatkę.",
+  "command_note_read_page": "notatka",
+  "command_note_read_page_desc": "Notatka do pokazania.",
+
+  "command_note_lock": "zablokuj",
+  "command_note_lock_desc": "Blokuje notatkę, uniemożliwiając jej czytanie.",
+  "command_note_lock_page": "notatka",
+  "command_note_lock_page_desc": "Notatka do zablokowania.",
+
+  "command_note_delete": "usuń",
+  "command_note_delete_desc": "Usuwa notatkę.",
+  "command_note_delete_page": "notatka",
+  "command_note_delete_page_desc": "Notatka do usunięcia.",
+
+  "command_note_unlock": "odblokuj",
+  "command_note_unlock_desc": "Odblokowuje notatkę.",
+  "command_note_unlock_page": "notatka",
+  "command_note_unlock_page_desc": "Notatka do odblokowania.",
+
+  "notes_creation_title": "tworzenie/edytowanie notatki",
+
+  "notes_title_label": "Napisz poniżej tytuł notatki.",
+  "notes_title_placeholder": "Tytuł notatki.",
+
+  "notes_content_label": "Napisz poniżej zawartość notatki.",
+  "notes_content_placeholder": "Zawartość notatki.",
+
+  "notes_locked_message": "Ta notatka jest zablokowana!",
+  "notes_edited_message": "Notatka %1% zmieniona! Nowa zawartość:\n```ansi\n%2%```",
+
+  "command_rngsim": "rng",
+  "command_rngsim_desc": "po prostu hazard lol",
+
+  "command_roll": "rzuć",
+  "command_roll_desc": "Rzuca jedną lub wieloma kostkami.",
+  "command_roll_rolls": "rzuty",
+  "command_roll_rolls_desc": "Liczba kostek do rzucenia.",
+
+  "roll_result_too_long": "Zbyt długi rzut.",
+
+  "command_roll_help": "rzuć_pomoc",
+  "command_roll_help_desc": "Pomoc dot. komendy /rzuć",
+
+  "command_rst": "rst",
+
+  "command_rst_add": "dodaj",
+  "command_rst_add_desc": "Dodaj napis do bazy danych po przejściu przez moderację.",
+  "command_rst_add_text": "tekst",
+  "command_rst_add_text_desc": "Tekst do dodania.",
+
+  "command_rst_get": "cytat",
+  "command_rst_get_desc": "Pokaż losowy cytat.",
+
+  "rst_random_text_title": "losowy tekst",
+  "rst_text_added_title": "tekst dodany",
+  "rst_text_added_content": "Your text has been added to the moderation queue.",
+
+  "command_username": "nick",
+  "command_username_desc": "Tworzy listę losowych nazw użytkownika.",
+  "command_username_count": "liczba",
+  "command_username_count_desc": "Liczba nazw użytkownika do wygenerowania.",
+
+  "username_generated": "Nazwa użytkownika stworzona!",
+  "username_generated_plural": "Nazwy użytkownika stworzona!",
+
+  "command_usersettings": "ustawienia",
+
+  "command_usersettings_set": "ustaw",
+  "command_usersettings_set_desc": "Ustaw opcję.",
+  "command_usersettings_set_setting": "opcja",
+  "command_usersettings_set_setting_desc": "Opcja do ustawienia.",
+  "command_usersettings_set_value": "wartość",
+  "command_usersettings_set_value_desc": "Nowa wartość do ustawienia.",
+
+  "usersettings_boolean_check_fail": "Wybrana opcja przyjmuje tylko wartości prawda/fałsz!",
+  "usersettings_type_fail": "Nie można było określić poprawnego typu dla tej opcji. Zgłoś ten błąd deweloperom.",
+  "usersettings_success": "Pomyślnie zmieniono opcję!",
+  "usersettings_success_details": "Opcja %1% ustawiona na wartość %2%.",
+
+  "command_usersettings_get": "pokaż",
+  "command_usersettings_get_desc": "Pokazuje wartość wybranej opcji.",
+  "command_usersettings_get_setting": "opcja",
+  "command_usersettings_get_setting_desc": "Opcja do odczytania.",
+
+  "usersettings_value_details": "Opcja %1% jest ustawiona na %2%.",
+  "usersettings_value": "Wartość %1%",
+
+  "command_usersettings_clear": "czyść",
+  "command_usersettings_clear_desc": "Przywraca wszystkie ustawienia na domyślne wartości.",
+
+  "usersettings_confirm_clear": "Aby potwierdzić przywrócenie ustawień, uruchom ponownie komendę.",
+  "usersettings_confirm_clear_title": "potwierdź przywrócenie ustawień",
+  "usersettings_cleared": "Ustawienia zostały przywrócone do wartośći domyślnych.",
+  "usersettings_cleared_title": "ustawienia wyczyszczone",
+
+  "command_wiki": "wiki",
+
+  "command_wiki_create": "stwórz",
+  "command_wiki_create_desc": "Tworzy nowy artykuł.",
+
+  "command_wiki_edit": "edytuj",
+  "command_wiki_edit_desc": "Edytuj istniejący artykuł.",
+
+  "command_wiki_read": "read",
+  "command_wiki_read_desc": "Read a page.",
+  "command_wiki_read_page": "page",
+  "command_wiki_read_page_desc": "The page to read.",
+
+  "command_wiki_lock": "zablokuj",
+  "command_wiki_lock_desc": "Blokuje stronę, uniemożliwiając jej czytanie. Musisz mieć uprawnienia do zarządzenia wiadomości.",
+  "command_wiki_lock_page": "strona",
+  "command_wiki_lock_page_desc": "Strona do zablokowania",
+
+  "command_wiki_delete": "usuń",
+  "command_wiki_delete_desc": "Usuwa stronę. Musisz mieć uprawnienia do zarządzenia wiadomościami.",
+  "command_wiki_delete_page": "strona",
+  "command_wiki_delete_page_desc": "Strona do usunięcia.",
+
+  "command_wiki_unlock": "odblokuj",
+  "command_wiki_unlock_desc": "Odblokuje stronę. Musisz mieć uprawnienia do zarządzenia wiadomościami.",
+  "command_wiki_unlock_page": "strona",
+  "command_wiki_unlock_page_desc": "Strona do odblokowania.",
+
+  "wiki_creation_title": "tworzenie/edytowanie strony na wiki",
+
+  "wiki_title_label": "Napisz tytuł strony poniżej.",
+  "wiki_title_placeholder": "Tytuł strony.",
+
+  "wiki_content_label": "Napisz zawartośc strony poniżej.",
+  "wiki_content_placeholder": "Zawartość strony.",
+
+  "wiki_locked_message": "Strona jest zablokowana!",
+  "wiki_edited_message": "(by %3%) Strona %1% zmieniona! Nowa zawartość:\n```ansi\n%2%```",
+
+  "wiki_note_not_found": "Nie znaleziono artykułu",
+
+  "command_wikipedia": "wikipedia",
+  "command_wikipedia_desc": "Pokazuje wstęp do anglojęzycznego artykułu na Wikipedii wraz z linkiem.",
+  "command_wikipedia_query": "zapytanie",
+  "command_wikipedia_query_desc": "Artykuł do wyszukania.",
+
+  "wikipedia_message": "## [Link do artykułu](%1%)\n\n%2%"
 }
