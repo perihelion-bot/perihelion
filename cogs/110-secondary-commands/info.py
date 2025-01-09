@@ -32,6 +32,7 @@ class InfoCog(commands.Cog):
 - @whirlingstars - i made most of the bot
 - @diginist - made /username, /distance, and a few other Cool Things
 - @legitsi - made the original rolling system, and /rngsim
+- @leepicqwerty - russian translations
 - @bambus80 - polish translations
 
  = Helpers =
