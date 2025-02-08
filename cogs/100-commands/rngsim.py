@@ -5,7 +5,7 @@ from utils.logging import log
 import random
 from math import floor
 from utils.translation import JSONTranslator
-from utils.userdata import get_data_manager
+from utils.data import get_data_manager
 
 from typing import Union, List, Optional
 

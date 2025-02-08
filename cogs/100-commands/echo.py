@@ -5,7 +5,7 @@ from utils.logging import log
 from utils.embeds import *
 from typing import Optional
 from utils.translation import JSONTranslator
-from utils.userdata import get_data_manager
+from utils.data import get_data_manager
 from discord.app_commands import locale_str
 
 class EchoCog(commands.Cog):
