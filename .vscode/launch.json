@@ -17,10 +17,7 @@
             "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/cogs/90-ticking-events/mapgame.py",
-            "cwd": "${workspaceFolder}",
-            "env": {
-                "PYTHONPATH": "${cwd}"
-            },
+            "cwd": "${workspaceFolder}/cogs/90-ticking-events",
             "console": "integratedTerminal"
         }
     ]

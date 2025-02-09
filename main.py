@@ -37,6 +37,7 @@ class Perihelion(commands.Bot):
                     log.debug(f"Extension {cog_name} loaded")
                 except Exception as e:
                     log.error(f"Failed to load extension {cog_name}: {e}")
+                    print(traceback.print_exc())
 
             log.debug(f"Cogs: {self.coglist}")
 

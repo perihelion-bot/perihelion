@@ -204,7 +204,7 @@ makuria
 alodia
 mamluk
 shilluk
-egypt 
+egypt
 fazughli
 sennar
 darfur
@@ -278,7 +278,7 @@ macakoali
 piela
 nungu
 zabarma
-sokoto 
+sokoto
 damagaram
 great fulo
 futa toro
@@ -301,13 +301,13 @@ bonoman
 gyaaman
 denkyira
 mankessim
-fante 
+fante
 whydah
 dahomey
 oyo
 benin
 nri
-aro 
+aro
 kwararafa
 maryland
 dahomey
@@ -344,7 +344,7 @@ matamba
 mbunda
 chokwe
 kazembe
-congo 
+congo
 zaire
 barotseland
 mutapa
@@ -360,7 +360,7 @@ swellendam
 graaff-reinet
 zulu
 african
-orange 
+orange
 griqualand east
 nieuwe republiek
 natalia
@@ -451,7 +451,7 @@ kars
 ottoman
 cyprus
 kurdistan
-all-palestine 
+all-palestine
 arab federation
 baduspanids
 kar-kiya
@@ -503,7 +503,7 @@ mysore
 bijapur
 pratapgarh
 bengal subah
-maratha 
+maratha
 jaintia
 sikh
 mughal
@@ -591,14 +591,14 @@ riau-lingga
 malacca
 johor
 pahang
-malayan 
+malayan
 federation malaya
 in philippines
 maguindanao
 sulu
 negros
 cantonal negros
-sovereign tagalog 
+sovereign tagalog
 philippine
 tagalog
 philippine
@@ -606,7 +606,7 @@ finland
 sweden and norway
 norway
 denmark-norway
-kalmar 
+kalmar
 schleswig
 france
 brittany
@@ -702,7 +702,7 @@ elba
 etruria
 marquisate finale
 regency carnaro
-gozitan 
+gozitan
 italian
 italy
 lombardy-venetia
@@ -758,7 +758,7 @@ ireland
 connacht
 irish soviets
 limerick soviet
-irish 
+irish
 prince-bishopric liege
 brabant
 bouillon
@@ -794,7 +794,7 @@ poland
 vistula land
 posen
 krakow
-polish al 
+polish al
 poland
 zakopane
 tarnobrzeg
@@ -855,9 +855,9 @@ cnezatul lui farcas
 wallachia
 moldavia
 transylvania
-wallachian 
-temesvar 
-varat 
+wallachian
+temesvar
+varat
 grand transylvania
 banat temeswar
 bukovina
@@ -1023,7 +1023,7 @@ crown aragon
 crown castile
 majorca
 granada
-iberian 
+iberian
 catalan
 portugal
 ditadura nacional
@@ -1060,8 +1060,8 @@ federal mexico
 sonora
 baja california
 mexican
-iroquois 
-cherokee 
+iroquois
+cherokee
 vermont
 muskogee
 west florida
@@ -1139,7 +1139,7 @@ peru
 peru-bolivian confederation
 peruvian
 federal loreto
-jungle 
+jungle
 liga federal
 supreme junta
 venezuela
