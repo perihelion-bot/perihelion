@@ -57,6 +57,7 @@
   
     "command_game": "игра",
     "command_game_tictactoe": "крестики-нолики",
+    "command_game_tictactoe_desc": "Начинает игру в крестики-нолики.",
     "command_game_tictactoe_size": "размер",
     "command_game_tictactoe_size_desc": "Размер игральной доски. Доступны значения от 3 до 5.",
     "command_game_tictactoe_row": "ряд",
