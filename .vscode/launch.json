@@ -4,11 +4,23 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "Run Perihelion Instance",
             "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Run Mapgame Tool",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/cogs/90-ticking-events/mapgame.py",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${cwd}"
+            },
             "console": "integratedTerminal"
         }
     ]
