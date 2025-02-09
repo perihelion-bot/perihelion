@@ -1,0 +1,1145 @@
+afghanistan
+albania
+algeria
+andorra
+angola
+antigua and barbuda
+argentina
+armenia
+australia
+austria
+azerbaijan
+bahamas
+bahrain
+bangladesh
+barbados
+belarus
+belgium
+belize
+benin
+bhutan
+bolivia
+bosnia and herzegovina
+botswana
+brazil
+brunei
+bulgaria
+burkina faso
+burundi
+cabo verde
+cambodia
+cameroon
+canada
+central african republic
+chad
+chile
+china
+colombia
+comoros
+congo
+costa rica
+cote d'ivoire
+croatia
+cuba
+cyprus
+czechia
+denmark
+djibouti
+dominica
+dominican republic
+ecuador
+egypt
+el salvador
+equatorial guinea
+eritrea
+estonia
+eswatini
+ethiopia
+fiji
+finland
+france
+gabon
+gambia
+georgia
+germany
+ghana
+greece
+grenada
+guatemala
+guinea
+guinea-bissau
+guyana
+haiti
+honduras
+hungary
+iceland
+india
+indonesia
+iran
+iraq
+ireland
+israel
+italy
+jamaica
+japan
+jordan
+kazakhstan
+kenya
+kiribati
+kosovo
+kuwait
+kyrgyzstan
+laos
+latvia
+lebanon
+lesotho
+liberia
+libya
+liechtenstein
+lithuania
+luxembourg
+madagascar
+malawi
+malaysia
+maldives
+mali
+malta
+marshall islands
+mauritania
+mauritius
+mexico
+micronesia
+moldova
+monaco
+mongolia
+montenegro
+morocco
+mozambique
+myanmar
+namibia
+nauru
+nepal
+netherlands
+new zealand
+nicaragua
+niger
+nigeria
+north korea
+north macedonia
+norway
+oman
+pakistan
+palau
+palestine
+panama
+papua new guinea
+paraguay
+peru
+philippines
+poland
+portugal
+qatar
+romania
+russia
+rwanda
+saint kitts and nevis
+saint lucia
+saint vincent and the grenadines
+samoa
+san marino
+sao tome and principe
+saudi arabia
+senegal
+serbia
+seychelles
+sierra leone
+singapore
+slovakia
+slovenia
+solomon islands
+somalia
+south africa
+south korea
+south sudan
+spain
+sri lanka
+sudan
+suriname
+sweden
+switzerland
+syria
+taiwan
+tajikistan
+tanzania
+thailand
+timor-leste
+togo
+tonga
+trinidad and tobago
+tunisia
+turkey
+turkmenistan
+tuvalu
+uganda
+ukraine
+united arab emirates
+united kingdom
+united states of america
+uruguay
+uzbekistan
+vanuatu
+vatican city
+venezuela
+vietnam
+yemen
+zambia
+zimbabwe
+marinid
+wattasid
+saadi
+sale
+'alawi
+rif
+makuria
+alodia
+mamluk
+shilluk
+egypt 
+fazughli
+sennar
+darfur
+mahdist
+tripolitanian
+cyrenaica
+arab
+hafsid
+hafsid bejaia
+tlemcen
+kuku
+beni abbas
+tuggurt
+regency algiers
+abdelkader
+anjouan
+antankarana
+antongil
+boina
+menabe
+imerina
+tamatave
+tanibe
+bornu
+shilluk
+wadai
+baguirmi
+medri bahri
+welayta
+hadiya
+ajuran
+ethiopian
+ennarea
+kaffa
+adal
+janjero
+majeerteen
+aussa
+harar
+geledi
+aussa
+isaaq
+habr yunis
+gumma
+gomma
+jimma
+limmu-ennarea
+gera
+hobyo
+somalia somaliland
+trarza
+tagant
+brakna
+mali
+bamana
+khasso
+agadez
+songhai
+mossi
+gurunsi
+gwiriko
+liptako
+tenkodogo
+wogodogo
+yatenga
+bilanga
+bilayanga
+bongandini
+con
+macakoali
+piela
+nungu
+zabarma
+sokoto 
+damagaram
+great fulo
+futa toro
+jol
+sine
+saloum
+baol
+cayor
+waalo
+bundu
+kaabu
+solimana
+futa jallon
+toucouleur
+wassoulou
+kong
+dagbon
+ashanti
+bonoman
+gyaaman
+denkyira
+mankessim
+fante 
+whydah
+dahomey
+oyo
+benin
+nri
+aro 
+kwararafa
+maryland
+dahomey
+benin
+biafra
+buganda
+bunyoro
+ankole
+toro
+busoga
+rwanda
+burundi
+karagwe
+pate
+malindi
+mombasa
+witu
+kilwa
+maravi
+zanzibar
+people's zanzibar
+tanganyika
+loango
+yaka
+anziku
+kongo
+kuba
+luba
+lunda
+yeke
+ndongo
+kasanje
+matamba
+mbunda
+chokwe
+kazembe
+congo 
+zaire
+barotseland
+mutapa
+zimbabwe
+butua
+rozvi
+mthwakazi
+ndebele
+gaza
+mthwa
+gciriku
+swellendam
+graaff-reinet
+zulu
+african
+orange 
+griqualand east
+nieuwe republiek
+natalia
+goshen
+stellaland
+upingtonia
+africa
+bophuthatswana
+ciskei
+transkei
+venda
+rhodesia
+zimbabwe rhodesia
+natal
+chagatai khanate
+kart
+moghulistan
+uzbek khanate
+nogai horde
+kazakh khanate
+khanate bukhara
+yarkent khanate
+dzungar khanate
+khanate kokand
+bukhara
+alash autonomy
+turkestan autonomy
+khanate khiva
+confederated altai
+khorezm people's soviet
+east turkestan
+bumthang
+tungning
+china
+reformed china
+china
+formosa
+guangzhou commune
+hunan soviet
+inner mongolian people's
+jiangxi-fujian soviet
+jiangxi soviet
+manchukuo
+ming
+qing
+ryukyu
+shun
+taiping heavenly
+tibet
+tibetan
+tibetan people's
+tungning
+tuvan people's
+uryankhay
+uryankhay krai
+xi
+yuan
+ashikaga shogunate
+azuchi-momoyama
+japan
+ezo
+tokugawa shogunate
+joseon
+korean
+people's korea
+people's committee korea
+korea
+hotak
+durrani
+badakhshan
+kunar
+afghanistan
+ma'danid
+khanate kalat
+durrani
+candar
+alaiye
+bafra
+trebizond
+alaiye
+karaman
+dulkadir
+ramadanid
+aq qoyunlu
+kara koyunlu
+hasankeyf
+kars
+ottoman
+cyprus
+kurdistan
+all-palestine 
+arab federation
+baduspanids
+kar-kiya
+marashiyan
+afrasiyab
+mihrabanid
+iran-u-turan
+guarded domains iran
+sublime persia
+persian socialist soviet in gilan
+imperial persia
+mahabad
+arab syria
+arab
+lebanon
+unix
+syrian arab
+sheikhdom kuwait
+bani khalid
+diriyah
+nejd
+jabal shammar
+riyadh
+idrisid asir
+nejd and hasa
+nejd
+hejaz
+mutawakkilite yemen
+yemen arab
+fadhli
+upper yafa
+lower yafa
+beihan
+dhala
+wahidi balhaf
+wahidi haban
+mahra qishn and socotra
+lahej
+federation arabia
+kuwait
+garhwal
+cochin
+delhi
+sur
+laur
+bengal
+jaunpur
+mysore
+bijapur
+pratapgarh
+bengal subah
+maratha 
+jaintia
+sikh
+mughal
+ india
+hyderabad
+travancore
+udaipur
+manikya
+suvadive
+maldives
+sikkim
+cambodia
+kampuchea
+luang phrabang
+vientiane
+champasak
+luang phrabang
+lao issara
+champa
+dai viet
+nghe-tinh soviet
+vietnam
+democratic vietnam
+cochinchina
+central vietnam
+vietnam
+mon s
+hanthawaddy
+ava
+pegu
+mrauk u
+taungoo
+konbaung
+shan
+arakan
+burma
+langkasuka
+singora
+ayutthaya
+thonburi
+lan na
+chiang mai
+pattani
+siam
+indonesia
+east indonesia
+east java
+east sumatra
+madura
+pasundan
+sumatra
+great dayak
+west kalimantan
+aceh
+palembang
+deli
+langkat
+jambi
+serdang
+majapahit
+mataram
+banten
+cirebon
+demak
+pajang
+bali s
+bima
+larantuka
+banggai
+gowa
+bone
+wajoq
+ternate
+bruneian
+sambas
+pontianak
+sarawak
+berau
+bulungan
+kutai martadipura
+kutai kartanegara
+banjar
+lanfang
+riau-lingga
+malacca
+johor
+pahang
+malayan 
+federation malaya
+in philippines
+maguindanao
+sulu
+negros
+cantonal negros
+sovereign tagalog 
+philippine
+tagalog
+philippine
+finland
+sweden and norway
+norway
+denmark-norway
+kalmar 
+schleswig
+france
+brittany
+burgundy
+french
+normandy
+lorraine
+viscounty bearn
+city danzig
+warsaw
+french
+vichy france
+saar protectorate
+corsica
+corsican
+anglo-corsican
+county foix
+french
+holy roman
+confederation rhine
+anhalt
+reuss-gera
+frankfurt
+german confederation
+german
+german federation
+german
+weimar
+nazi germany
+west berlin
+german democratic
+alsace soviet
+baden
+bavaria
+bavarian soviet
+bremen
+brunswick
+frankfurt
+hamburg
+hanover
+hesse-homburg
+hesse-kassel
+hohenzollern-hechingen
+hohenzollern-sigmaringen
+holstein
+lippe
+lubeck
+mecklenburg-schwerin
+mecklenburg-strelitz
+nassau
+oldenburg
+pomerania
+prussia
+brandenburg-prussia
+prussia
+reuss
+saxe-altenburg
+saxe-coburg-saalfeld
+saxe-gotha
+saxe-hildburghausen
+saxe-lauenburg
+saxe-meiningen
+saxe-weimar-eisenach
+saxony
+schaumburg-lippe
+schwarzburg-rudolstadt
+schwarzburg-sondershausen
+germany waldeck
+wurttemberg
+bottleneck
+east germany
+west germany
+county tyrol
+styria
+prince-archbishopric salzburg
+german-austria
+austrian
+helvetic
+rhodanic
+crema
+alba
+ancona
+florence
+naples
+urbino
+anconine
+judicate arborea
+etruria
+cisalpine
+cispadane
+cospaia
+elba
+etruria
+marquisate finale
+regency carnaro
+gozitan 
+italian
+italy
+lombardy-venetia
+lucca
+mantua
+milan
+modena
+naples
+noli
+parma
+papal
+pisa
+roman
+sardinia
+san marco
+senarica
+sicily
+italy transpadane
+tuscany
+two sicilies
+venice
+genoa
+italian governorate montenegro
+tavolara
+italy
+territory trieste
+rose island
+gwynedd
+powys
+scotland
+england
+angevin
+wales
+commonwealth england
+protectorate
+great britain
+leinster
+osraige
+airgialla
+ui maine
+ailech
+tyrconnell
+tir eoghain
+fermanagh
+magh luirg
+thomond
+desmond
+lordship ireland
+clandeboye
+ui failghe
+connacht
+ireland
+connacht
+irish soviets
+limerick soviet
+irish 
+prince-bishopric liege
+brabant
+bouillon
+belgian
+seven nerlands
+holland
+nerlands
+pomerania
+demmin
+szczecin
+pomerania-wolgast
+masovia
+pomerania-stolp
+pomerania-neustettin
+krakow
+halych
+galicia-volhynia
+bytom
+silesia
+opole
+raciborz
+inowroclaw
+teschen
+poland
+polish-lithuanian commonwealth
+crown poland
+lithuania
+royal prussia
+prussia
+new courland
+warsaw
+poland
+vistula land
+posen
+krakow
+polish al 
+poland
+zakopane
+tarnobrzeg
+komancza
+lemko-rusyn people's
+polish
+central lithuania
+city danzig
+military administration in poland
+polish underground
+poland
+al unity
+poland
+polish people's
+kholodny yar
+zaporozhian sich
+cossack hetmanate
+ukrainian people's
+ukrainian
+ukrainian soviet socialist
+makhnovshchina
+ukraine hutsul
+ukraine carpatho-ukraine
+donetsk people's
+luhansk people's
+odoro
+crimean khanate
+crimean people's
+crimea
+polotsk
+lithuania
+lithuania lithuania
+lithuania
+perloja
+central lithuania
+belarusian people's
+teutonic order
+livonia
+baltic
+latvian
+soviet naissaar
+estonian
+dacian
+tara litua
+voievodeship gelu
+voivodeship maramures
+jupanat dimitrie
+voivodeship glad
+voivodeship menumorut
+jupanat gheorghe
+jupanat tatos
+jupanat sacea
+jupanat setslav
+voivodship transylvania
+banat severin
+voivodship seneslav
+cnezatul lui farcas
+wallachia
+moldavia
+transylvania
+wallachian 
+temesvar 
+varat 
+grand transylvania
+banat temeswar
+bukovina
+romania romania
+banat
+moldavian democratic
+socialist romania
+novgorod
+pskov
+tver
+beloozero
+yaroslavl
+ryazan
+great perm
+vyatka land
+golden horde
+astrakhan khanate
+khanate kazan
+qasim khanate
+khanate sibir
+kalmyk khanate
+uhtua
+kuban people's
+don
+idel-ural
+far eastern
+green ukraine
+tungus
+buryat-mongolia
+moscow
+ingria ingria
+jaxa
+tsardom russia
+russia russian
+poland
+finland
+russia russian
+russian soviet federative socialist
+russia  ern region
+soviet socialist s
+azerbaijan soviet socialist
+estonian soviet socialist
+karelo-finnish soviet socialist
+kirghiz soviet socialist
+lithuanian soviet socialist
+pridnestrovian moldavian soviet socialist
+turkestan autonomous soviet socialist
+bashkir autonomous soviet socialist
+kazakh autonomous socialist soviet
+dagestan autonomous soviet socialist
+yakut autonomous soviet socialist
+karelian autonomous soviet socialist
+mordovian autonomous soviet socialist
+kalmyk autonomous soviet socialist
+kabardino-balkarian autonomous soviet socialist
+mari autonomous soviet socialist
+kabardin autonomous soviet socialist
+khakas autonomous oblast
+tajik soviet socialist
+ukrainian soviet socialist
+hungary
+eastern hungarian
+transylvania
+upper hungary
+transylvania
+croatia
+hungary
+hungarian
+hungarian people's
+bohemia
+margraviate moravia
+slovak soviet
+slovak
+czechoslovakia czechoslovak
+czechoslovakia czech and slovak federative
+austria
+arch austria
+austrian
+austria-hungary
+independent albania
+central albania
+albania
+mirdita
+german occupation albania
+hellenic
+greece
+hellenic
+bosnia
+bosnia and herzegovina
+republika srpska
+croatian herzeg-bosnia
+bulgarian
+despotate dobruja
+bulgaria bulgaria
+strandzha commune
+bulgaria bulgaria
+people's bulgaria
+croatia
+slavonia
+croatia-slavonia
+fiume
+independent croatia
+territory trieste
+ragusa
+serbian krajina
+hellenic
+greece
+ionian islands
+septinsular
+samos
+cretan
+ikaria
+hellenic
+prince-bishopric montenegro
+montenegro
+german-occupied territory montenegro
+krusevo
+independent macedonia
+revolutionary serbia
+serbia
+yugoslavia
+federal yugoslavia
+kosova
+byzantine
+ans
+despotate epirus
+nicaea
+ottoman
+caucasian albania
+kabardia
+circassia
+abkhazia
+elisu
+avar khanate
+caucasian
+chechen ichkeria
+georgia
+imereti
+svaneti
+mingrelia
+guria
+samtskhe-saatabago
+kartli
+kakheti
+kartli-kakheti
+democratic georgia
+armenia armenia
+mountainous armenia
+artsakh artsakh
+aras
+centrocaspian dictatorship
+baku commune
+transcaucasian democratic federative
+galicia
+cordoba
+asturias
+navarre
+leon
+couto misto
+castile
+catalonia
+crown aragon
+crown castile
+majorca
+granada
+iberian 
+catalan
+portugal
+ditadura nacional
+spanish
+galicia
+catalan
+asturian socialist
+revolutionary catalonia
+catalonia
+pirates
+madawaska
+canada
+lower canada
+mi'kma'ki
+manitoba
+saskatchewan
+dominion newfoundland
+spanish haiti
+dominican
+los altos
+haiti
+toltec
+cocollan
+aztec
+zapotec civilization
+ern america
+mexican
+mexico
+mexican
+rio grande
+centralist mexico
+yucatan
+federal mexico
+sonora
+baja california
+mexican
+iroquois 
+cherokee 
+vermont
+muskogee
+west florida
+east florida
+floridas
+indian stream
+texas
+oregon
+deseret
+california
+palmetto
+alabama
+louisiana
+georgia
+mississippi
+confederate america
+puerto rico
+tu'i tonga
+'uvea
+alo
+sigave
+mangareva
+bora bora
+raiatea
+huahine
+tahiti
+rurutu
+rimatara
+tahuata
+rapa iti
+mangareva
+tuamotu
+fiji
+dominion fiji
+hawaii
+niue-fekai
+rarotonga
+saudeleur
+rapa nui
+nauru
+abemama
+provinces rio de la plata
+argentine confederation
+entre rios
+tucuman
+buenos aires
+upper peru
+bolivar
+upper peru
+bolivian
+peru-bolivian confederation
+acre
+brazil
+confederation equator
+riograndense
+juliana
+counani
+trinidad
+chile
+new chile
+conservative
+muisca confederation
+cartagena
+confederate cities valle del cauca
+provinces new granada
+gran colombia
+new granada
+province guayaquil
+el stronato
+chimor
+inca
+protectorate peru
+iquicha
+peru
+peru-bolivian confederation
+peruvian
+federal loreto
+jungle 
+liga federal
+supreme junta
+venezuela
