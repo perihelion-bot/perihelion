@@ -21,6 +21,15 @@ class Tile:
     income: int
     owner_id: int
 
+    def __eq__(self, other):
+        if self is other: return True
+        if isinstance(other, Tile):
+            return self.coordinates == other.coordinates
+        return super().__eq__(self, other)
+
+    def __hash__(self):
+        return self.owner_id
+
 @dataclass
 class Country:
     class Relations(Enum):
@@ -238,6 +247,12 @@ class MapGameInstance:
                     available_tiles.append(tile)
         return available_tiles
 
+    def all_tiles(self) -> list[Tile] | None:
+        """
+            WARNING: this function takes ~50ms! maybe i haven't tested it yet
+        """
+        return [tile for row in self.tiles for tile in row]
+
     def save_to_file(self):
         with open("data/mapgame.pickle", "wb") as f:
             pickle.dump(self, f)
@@ -266,6 +281,9 @@ class MapGameInstance:
                     pixels[tile.coordinates[0], tile.coordinates[1]] = clr_blend((35,49,77), countries.get(tile.owner_id, Country("", {}, 0,0,0,0,0,(100,100,100))).color)
                 if tile.flags == Tile.TileFlags.LAND | Tile.TileFlags.CROSSABLE:
                     pixels[tile.coordinates[0], tile.coordinates[1]] = countries.get(tile.owner_id, Country("", {}, 0,0,0,0,0,(100,100,100))).color
+                # DEBUG
+                # if tile in self.border_tiles:
+                #    pixels[tile.coordinates[0], tile.coordinates[1]] = (200,0,0)
         buffer = BytesIO()
         img.save(buffer, format='PNG')
         buffer.seek(0)
@@ -278,7 +296,11 @@ class MapGameInstance:
         self.save_to_file()
 
     async def mapgame_step_expand(self):
+        roughness = 0.5 #0 is fully smooth, 1 is fully rough. somewhere in the middle is best
+
         additional_income = {}
+        new_border_tiles = set()
+        expansion_seed = random.random()
         for tile in self.border_tiles:
             owner = self.countries[tile.owner_id]
             coords = tile.coordinates
@@ -293,13 +315,33 @@ class MapGameInstance:
                 neighbors += (self.tiles[coords[0]][coords[1]-1],)
 
             neighbors_crossable = [neighbor for neighbor in neighbors if Tile.TileFlags.CROSSABLE in neighbor.flags]
-            candidates = [neighbor for neighbor in neighbors_crossable]# if neighbor.owner_id == 0] # TODO: make proper check for warring countries too
-            for candidate in candidates:
+            candidates = [neighbor for neighbor in neighbors_crossable if neighbor.owner_id == 0]
+            for candidate in candidates: # expansion
                 if (random.random() * 100) < owner.strength * math.log(owner.military_expenses+2, 2): # Take the tile!
                     candidate.owner_id = tile.owner_id
                     additional_income[tile.owner_id] = additional_income.get(tile.owner_id, 0) + 1
-                    self.border_tiles.append(candidate)
-            if len([neighbor for neighbor in neighbors_crossable if neighbor.owner_id != tile.owner_id]) == 0:
-                self.border_tiles.remove(tile)
+                    new_border_tiles.add(candidate)
+            risk = [neighbor for neighbor in neighbors_crossable if neighbor.owner_id != 0] # TODO: make proper check for warring countries too
+            winning_countries = {}
+            country_tiles = {}
+            if risk and not all([neighbor.owner_id == tile.owner_id for neighbor in risk]): # are we in a warzone
+                for candidate in risk: # war
+                    if candidate.owner_id not in winning_countries:
+                        winning_countries[candidate.owner_id] = 0
+                        country_tiles[candidate.owner_id] = 0
+                    random.seed(expansion_seed * candidate.coordinates[0] + candidate.coordinates[1]) # designed to stay the same for the same tile on the same turn and in no other case
+                    strength = random.random()
+                    winning_countries[candidate.owner_id] += strength
+                    country_tiles[candidate.owner_id] += 1
+                winning_countries = {k: v/country_tiles[k]**roughness for k, v in winning_countries.items()}
+                winner = max(winning_countries, key=winning_countries.get)
+                if tile.owner_id != winner:
+                    additional_income[winner] = additional_income.get(winner, 0) + 1
+                    additional_income[tile.owner_id] = additional_income.get(tile.owner_id, 0) - 1
+                    tile.owner_id = winner
+                new_border_tiles.add(tile)
+            if len([neighbor for neighbor in neighbors_crossable if neighbor.owner_id != tile.owner_id]) != 0:
+                new_border_tiles.add(tile)
+        self.border_tiles = list(new_border_tiles)
         for country_id in additional_income:
             self.countries[country_id].income += additional_income[country_id]
