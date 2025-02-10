@@ -57,6 +57,7 @@
 
   "command_game": "game",
   "command_game_tictactoe": "tictactoe",
+  "command_game_tictactoe_desc": "Starts a game of Tic-Tac-Toe.",
   "command_game_tictactoe_size": "size",
   "command_game_tictactoe_size_desc": "The size of the board. Ranges from 3 to 5.",
   "command_game_tictactoe_row": "row",
