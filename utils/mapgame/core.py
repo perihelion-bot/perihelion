@@ -47,16 +47,81 @@ class Country:
     money: int
     income: int
     color: tuple[int,int,int]
+    war_exhaustion: int
+    stability: int
+    
+    async def tick_country(self, instance: "MapGameInstance"):
+        self.money += self.income
+        self.money -= self.military_expenses
+        
+        if random.random() < 0.02:
+            self.strength = random.randint(3, 10)
+            
+        if self.money < 0: 
+            self.money = 0
+            self.strength = 1
+            
+        if self.warring_countries():
+            if self.money <= 0:
+                self.war_exhaustion += 8
+                self.military_expenses = self.income // 4
+            else:
+                self.war_exhaustion += 2
+                self.military_expenses = max((self.money) // 4, round(self.income * 1.5))
+        elif self.war_exhaustion > 0:
+            self.war_exhaustion -= 3
+            
+        for id, relation in self.relations.items():
+            if random.random() < 0.005:
+                match relation:
+                    case self.Relations.WAR: # Treaties are handled elsewhere
+                        break
+                    case self.Relations.ENEMIES: 
+                        if random.random() < 0.3 - max(self.war_exhaustion / 5000, 0.2):
+                            instance.event(f"{self.name} has declared war on {instance.countries[id].name}!")
+                            instance.countries.set_two_way_relation(self, instance.countries[id], self.Relations.WAR)
+                        else:
+                            instance.countries.set_two_way_relation(self, instance.countries[id], self.Relations.NEUTRAL)
+                    case self.Relations.NEUTRAL: 
+                        if random.random() < 0.4:
+                            instance.countries.set_two_way_relation(self, instance.countries[id], self.Relations.ENEMIES)
+                        else:
+                            instance.countries.set_two_way_relation(self, instance.countries[id], self.Relations.FRIENDLY)
+                    case self.Relations.FRIENDLY: 
+                        if rng := random.random() < 0.35:
+                            instance.countries.set_two_way_relation(self, instance.countries[id], self.Relations.NEUTRAL)
+                        elif rng < 0.75:
+                            pass
+                        else:
+                            instance.event(f"{self.name} has allied with {instance.countries[id].name}!")
+                            instance.countries.set_two_way_relation(self, instance.countries[id], self.Relations.ALLIED)
+                    case self.Relations.ALLIED: 
+                        if random.random() < 0.2:
+                            instance.event(f"{self.name} has stopped being allies with {instance.countries[id].name}!")
+                            instance.countries.set_two_way_relation(self, instance.countries[id], self.Relations.FRIENDLY)
 
-    async def tick_country(self, instance):
-        pass
-
+            if relation == self.Relations.ALLIED:  
+                if warring_countries := (ally := instance.countries[id]).warring_countries():
+                    for warring_country in warring_countries:
+                        country = instance.countries[warring_country]
+                        instance.countries.set_two_way_relation(self, country, self.Relations.WAR)
+                        instance.event(f"{self.name} has declared war on {country.name} to support their ally of {ally.name}!")
+            
+            if relation == self.Relations.WAR:  
+                if self.war_exhaustion > 200 and random.random() > (self.war_exhaustion - 200) / 20000:
+                    instance.countries.declare_peace(instance, self, instance.countries[id])
+                
+    
+    def warring_countries(self):
+        return [relation[0] for relation in self.relations.items() if relation[1] == self.Relations.ALLIED]
+    
 @dataclass
 class MapGameInstance:
     tiles: list[list[Tile]]
     border_tiles: list[Tile]
     _countries: list[Country]
     turn: int
+    event_log: str
 
     @staticmethod
     def parse_image(img):
@@ -145,6 +210,9 @@ class MapGameInstance:
             country_a.relations[country_b.id] = relation
             country_b.relations[country_a.id] = relation
 
+        def declare_peace(self, instance: "MapGameInstance", country_a: Country, country_b: Country):
+            ...
+        
         def to_dict(self) -> dict[int, Country]:
             """Returns all countries as a dictionary keyed by their IDs."""
             return {country.id: country for country in self._countries_list}
@@ -248,9 +316,6 @@ class MapGameInstance:
         return available_tiles
 
     def all_tiles(self) -> list[Tile] | None:
-        """
-            WARNING: this function takes ~50ms! maybe i haven't tested it yet
-        """
         return [tile for row in self.tiles for tile in row]
 
     def save_to_file(self):
@@ -289,10 +354,17 @@ class MapGameInstance:
         buffer.seek(0)
         return discord.File(buffer, 'mapgame.png')
 
+    def event(self, event: str):
+        self.event_log += event
+        self.event_log += "\n"
+    
     async def mapgame_step(self):
+        self.event_log = ""
         for i in range(5):
             await asyncio.sleep(0)
             await self.mapgame_step_expand()
+        for country in self.countries:
+            country.tick_country(self)
         self.save_to_file()
 
     async def mapgame_step_expand(self):

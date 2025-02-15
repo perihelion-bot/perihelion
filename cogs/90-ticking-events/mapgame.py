@@ -33,7 +33,7 @@ class MapGameCog(commands.Cog):
                 self.instance: MapGameInstance = pickle.load(f)
         except FileNotFoundError:
             log.error("Mapgame pickle file not found, bail!")
-            raise Exception("mapgame.pickle file not found.")
+            raise FileNotFoundError("mapgame.pickle file not found.")
 
 
     @commands.Cog.listener()
@@ -76,7 +76,7 @@ if __name__ == "__main__":
             tile = instance.random_available_tile()
             country_color = colorsys.hsv_to_rgb(random.random(), (random.random()/2)+0.5, (random.random()/2)+0.5)
             country_color = tuple(int(clr*255) for clr in country_color)
-            country_id = instance.countries.append(Country(instance.CountryNamer().generate(), {}, -1, 25, 0, 0, 1, country_color))
+            country_id = instance.countries.append(Country(instance.CountryNamer().generate(), {}, -1, 5, 0, 0, 1, country_color, 0))
             tile.owner_id = country_id
             instance.border_tiles.append(tile)
         with open("data/mapgame.pickle", "wb") as f:
