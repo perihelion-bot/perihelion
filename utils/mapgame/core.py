@@ -29,7 +29,7 @@ class Tile:
         return super().__eq__(self, other)
 
     def __hash__(self):
-        return self.owner_id
+        return self.coordinates[1] << 16 + self.coordinates[0]
 
 @dataclass
 class Country:
@@ -50,7 +50,10 @@ class Country:
     color: tuple[int,int,int]
     war_exhaustion: int
     stability: int
-    
+
+    def __hash__(self):
+        return self.id
+
     async def tick_country(self, instance: "MapGameInstance"):
         self.money += self.income
         self.money -= self.military_expenses
@@ -109,6 +112,7 @@ class Country:
             
             if relation == self.Relations.WAR:  
                 if self.war_exhaustion > 200 and random.random() > (self.war_exhaustion - 200) / 20000:
+                    instance.event(f"{self.name} has made peace with {instance.countries[id].name}!")
                     instance.countries.declare_peace(instance, self, instance.countries[id])
                 
     
@@ -213,8 +217,8 @@ class MapGameInstance:
             country_a.relations[country_b.id] = relation
             country_b.relations[country_a.id] = relation
 
-        def get_allies(self, country: Country, found_countries: set[Country] | None):
-            if found_countries == None:
+        def get_allies(self, country: Country, found_countries: set[Country] | None = None):
+            if found_countries is None:
                 found_countries = {country}
             else:
                 found_countries |= {country}
@@ -408,11 +412,12 @@ class MapGameInstance:
 
         additional_income = {}
         new_border_tiles = set()
+        random.seed(random.random() + self.turn)
         expansion_seed = random.random()
         for tile in self.border_tiles:
             owner = self.countries[tile.owner_id]
             owners_takeable = owner.warring_countries()
-            owners_takeable.append(0)
+            owners_takeable.append(owner.id)
             coords = tile.coordinates
             neighbors: tuple[Tile] = () # Initialize as empty tuple, then populate correctly
             if coords[0] + 1 < len(self.tiles):
@@ -435,7 +440,9 @@ class MapGameInstance:
             winning_countries = {}
             country_tiles = {}
             if risk and not all([neighbor.owner_id == tile.owner_id for neighbor in risk]): # are we in a warzone
+                count = 1
                 for candidate in risk: # war
+                    count += 1
                     if candidate.owner_id not in winning_countries:
                         winning_countries[candidate.owner_id] = 0
                         country_tiles[candidate.owner_id] = 0
