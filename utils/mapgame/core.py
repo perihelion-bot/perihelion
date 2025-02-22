@@ -81,13 +81,13 @@ class Country:
                     case self.Relations.WAR: # Treaties are handled elsewhere
                         break
                     case self.Relations.ENEMIES: 
-                        if random.random() < 0.3 - max(self.war_exhaustion / 5000, 0.2):
+                        if random.random() < 0.4 - max(self.war_exhaustion / 5000, 0.2):
                             instance.event(f"{self.name} has declared war on {instance.countries[id].name}!")
                             instance.countries.set_two_way_relation(self, instance.countries[id], self.Relations.WAR)
                         else:
                             instance.countries.set_two_way_relation(self, instance.countries[id], self.Relations.NEUTRAL)
                     case self.Relations.NEUTRAL: 
-                        if random.random() < 0.4:
+                        if random.random() < 0.5:
                             instance.countries.set_two_way_relation(self, instance.countries[id], self.Relations.ENEMIES)
                         else:
                             instance.countries.set_two_way_relation(self, instance.countries[id], self.Relations.FRIENDLY)
@@ -95,7 +95,9 @@ class Country:
                         if rng := random.random() < 0.35:
                             instance.countries.set_two_way_relation(self, instance.countries[id], self.Relations.NEUTRAL)
                         elif rng < 0.75:
-                            pass# TODO: make proper check for warring countries too tries.set_two_way_relation(self, instance.countries[id], self.Relations.ALLIED)
+                            pass# TODO: make proper check for warring countries too t
+                        else:
+                            instance.countries.set_two_way_relation(self, instance.countries[id], self.Relations.ALLIED)
                     case self.Relations.ALLIED: 
                         if random.random() < 0.2:
                             instance.event(f"{self.name} has stopped being allies with {instance.countries[id].name}!")
