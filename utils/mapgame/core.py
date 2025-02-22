@@ -95,8 +95,9 @@ class Country:
                         if rng := random.random() < 0.35:
                             instance.countries.set_two_way_relation(self, instance.countries[id], self.Relations.NEUTRAL)
                         elif rng < 0.75:
-                            pass# TODO: make proper check for warring countries too t
+                            pass # TODO: make proper check for warring countries too
                         else:
+                            instance.event(f"{self.name} has allied with {instance.countries[id].name}!")
                             instance.countries.set_two_way_relation(self, instance.countries[id], self.Relations.ALLIED)
                     case self.Relations.ALLIED: 
                         if random.random() < 0.2:
