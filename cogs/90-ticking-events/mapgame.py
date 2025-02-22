@@ -5,7 +5,7 @@ if __name__ == "__main__":
     path.append(getcwd())
 
 import discord
-from discord import app_commands
+from discord import TextChannel, app_commands
 from discord.ext import commands
 from utils.logging import log
 from utils.embeds import *
@@ -27,7 +27,7 @@ class MapGameCog(commands.Cog):
     def __init__(self, client):
         self.client = client
         self.translator: JSONTranslator = client.tree.translator
-        self.channel = client.get_channel(MAPGAME["CHANNEL"])
+        self.channel: TextChannel = None
         try:
             with open("data/mapgame.pickle", "rb") as f:
                 self.instance: MapGameInstance = pickle.load(f)
@@ -35,15 +35,25 @@ class MapGameCog(commands.Cog):
             log.error("Mapgame pickle file not found, bail!")
             raise FileNotFoundError("mapgame.pickle file not found.")
 
+    async def cog_unload(self):
+        await super().cog_unload()
+        self.mapgame_step_loop.cancel()
+    
 
     @commands.Cog.listener()
     async def on_ready(self):
+        self.channel = await self.client.fetch_channel(MAPGAME["CHANNEL"])
+        if MAPGAME["ENABLED"]:
+            self.mapgame_step_loop.start()
         log.info("Cog: mapgame loaded")
 
-    #@tasks.loop(seconds=MAPGAME["STEPRATE"])
+    @tasks.loop(seconds=MAPGAME["STEPRATE"])
     async def mapgame_step_loop(self):
-        if MAPGAME["ENABLED"]:
-            await self.instance.mapgame_step()
+        log.debug(f"MapGameCog: step #{self.instance.turn}")
+        await self.instance.mapgame_step()
+        events = self.instance.get_events()
+        image = await self.instance.render()
+        await self.channel.send(events, file=image)
 
     @app_commands.command(name="command_mapgame", description="command_mapgame")
     @app_commands.rename(arg1="command_mapgame_arg1")
@@ -74,9 +84,9 @@ if __name__ == "__main__":
         instance = MapGameInstance.parse_image(image)
         for i in range(10):
             tile = instance.random_available_tile()
-            country_color = colorsys.hsv_to_rgb(random.random(), (random.random()/2)+0.5, (random.random()/2)+0.5)
+            country_color = colorsys.hsv_to_rgb(random.random(), (random.random()/3)+0.5, (random.random()/3)+0.5)
             country_color = tuple(int(clr*255) for clr in country_color)
-            country_id = instance.countries.append(Country(instance.CountryNamer().generate(), {}, -1, 5, 0, 0, 1, country_color, 0))
+            country_id = instance.countries.append(Country(instance.CountryNamer().generate(), {}, -1, 5, 0, 0, 1, country_color, 0, 100))
             tile.owner_id = country_id
             instance.border_tiles.append(tile)
         with open("data/mapgame.pickle", "wb") as f:

@@ -6,6 +6,7 @@ import pickle
 import random
 import re
 import math
+from typing import Generator
 from PIL import Image
 import discord
 
@@ -91,10 +92,7 @@ class Country:
                         if rng := random.random() < 0.35:
                             instance.countries.set_two_way_relation(self, instance.countries[id], self.Relations.NEUTRAL)
                         elif rng < 0.75:
-                            pass
-                        else:
-                            instance.event(f"{self.name} has allied with {instance.countries[id].name}!")
-                            instance.countries.set_two_way_relation(self, instance.countries[id], self.Relations.ALLIED)
+                            pass# TODO: make proper check for warring countries too tries.set_two_way_relation(self, instance.countries[id], self.Relations.ALLIED)
                     case self.Relations.ALLIED: 
                         if random.random() < 0.2:
                             instance.event(f"{self.name} has stopped being allies with {instance.countries[id].name}!")
@@ -115,7 +113,7 @@ class Country:
                 
     
     def warring_countries(self):
-        return [relation[0] for relation in self.relations.items() if relation[1] == self.Relations.ALLIED]
+        return [relation[0] for relation in self.relations.items() if relation[1] == self.Relations.WAR]
     
 @dataclass
 class MapGameInstance:
@@ -143,13 +141,16 @@ class MapGameInstance:
                         flags = Tile.TileFlags.LAND | Tile.TileFlags.CROSSABLE
                 income = g >> 4
                 tiles[x].append(Tile(flags, (x, y), income, 0))
-        return MapGameInstance(tiles, [], [], 0)
+        return MapGameInstance(tiles, [], [], 0, "")
 
     class CountryAccessor: # Helper class to handle country access in a way that makes sense (e.g. not instance[2])
         def __init__(self, countries_list: list[Country]):
             self._countries_list = countries_list
-
-        def __getitem__(self, country_id: int) -> Country:
+            self._fake_country_0 = Country("Unclaimed", {}, 0, 0, 0, 0, 0, (100,100,100), 0, 0) 
+            
+        def __getitem__(self, country_id: int) -> Country | None:
+            #if country_id == 0:
+            #    return self._fake_country_0 # We do this since 0 should be claimed, but by nobody.
             for country in self._countries_list:
                 if country.id == country_id:
                     return country
@@ -236,7 +237,11 @@ class MapGameInstance:
         
         def to_dict(self) -> dict[int, Country]:
             """Returns all countries as a dictionary keyed by their IDs."""
-            return {country.id: country for country in self._countries_list}
+            return {country.id: country for country in self._countries_list} 
+        
+        def all_countries(self):
+            for country in self._countries_list:
+                yield country           
 
     @property
     def countries(self):
@@ -364,9 +369,11 @@ class MapGameInstance:
                 if tile.flags == Tile.TileFlags.WATER:
                     pass
                 if tile.flags == Tile.TileFlags.CROSSABLE: # Water crossing
-                    pixels[tile.coordinates[0], tile.coordinates[1]] = clr_blend((35,49,77), countries.get(tile.owner_id, Country("", {}, 0,0,0,0,0,(100,100,100))).color)
+                    pixels[tile.coordinates[0], tile.coordinates[1]] = clr_blend((35,49,77), countries.get(tile.owner_id, Country("", {}, 0,0,0,0,0,(100,100,100),0,0)).color)
+                if tile.flags == Tile.TileFlags.LAND: # Uncrossable land
+                    pixels[tile.coordinates[0], tile.coordinates[1]] = (25,25,25)
                 if tile.flags == Tile.TileFlags.LAND | Tile.TileFlags.CROSSABLE:
-                    pixels[tile.coordinates[0], tile.coordinates[1]] = countries.get(tile.owner_id, Country("", {}, 0,0,0,0,0,(100,100,100))).color
+                    pixels[tile.coordinates[0], tile.coordinates[1]] = countries.get(tile.owner_id, Country("", {}, 0,0,0,0,0,(100,100,100),0,0)).color
                 # DEBUG
                 # if tile in self.border_tiles:
                 #    pixels[tile.coordinates[0], tile.coordinates[1]] = (200,0,0)
@@ -378,14 +385,22 @@ class MapGameInstance:
     def event(self, event: str):
         self.event_log += event
         self.event_log += "\n"
-    
+        
+    def get_events(self) -> str:
+        """Note that this function clears the event log.
+        """
+        log = self.event_log
+        self.event_log = ""
+        return log
+            
     async def mapgame_step(self):
         self.event_log = ""
         for i in range(5):
             await asyncio.sleep(0)
             await self.mapgame_step_expand()
-        for country in self.countries:
-            country.tick_country(self)
+        for country in self.countries.all_countries():
+            await country.tick_country(self)
+        self.turn += 1
         self.save_to_file()
 
     async def mapgame_step_expand(self):
@@ -396,6 +411,8 @@ class MapGameInstance:
         expansion_seed = random.random()
         for tile in self.border_tiles:
             owner = self.countries[tile.owner_id]
+            owners_takeable = owner.warring_countries()
+            owners_takeable.append(0)
             coords = tile.coordinates
             neighbors: tuple[Tile] = () # Initialize as empty tuple, then populate correctly
             if coords[0] + 1 < len(self.tiles):
@@ -414,7 +431,7 @@ class MapGameInstance:
                     candidate.owner_id = tile.owner_id
                     additional_income[tile.owner_id] = additional_income.get(tile.owner_id, 0) + 1
                     new_border_tiles.add(candidate)
-            risk = [neighbor for neighbor in neighbors_crossable if neighbor.owner_id != 0] # TODO: make proper check for warring countries too
+            risk = [neighbor for neighbor in neighbors_crossable if neighbor.owner_id in owners_takeable] 
             winning_countries = {}
             country_tiles = {}
             if risk and not all([neighbor.owner_id == tile.owner_id for neighbor in risk]): # are we in a warzone
@@ -436,5 +453,7 @@ class MapGameInstance:
             if len([neighbor for neighbor in neighbors_crossable if neighbor.owner_id != tile.owner_id]) != 0:
                 new_border_tiles.add(tile)
         self.border_tiles = list(new_border_tiles)
+        if additional_income.get(0, False):
+            del additional_income[0]
         for country_id in additional_income:
             self.countries[country_id].income += additional_income[country_id]
