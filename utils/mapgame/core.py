@@ -440,9 +440,7 @@ class MapGameInstance:
             winning_countries = {}
             country_tiles = {}
             if risk and not all([neighbor.owner_id == tile.owner_id for neighbor in risk]): # are we in a warzone
-                count = 1
                 for candidate in risk: # war
-                    count += 1
                     if candidate.owner_id not in winning_countries:
                         winning_countries[candidate.owner_id] = 0
                         country_tiles[candidate.owner_id] = 0
