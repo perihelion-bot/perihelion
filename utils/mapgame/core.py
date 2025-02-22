@@ -103,6 +103,8 @@ class Country:
             if relation == self.Relations.ALLIED:  
                 if warring_countries := (ally := instance.countries[id]).warring_countries():
                     for warring_country in warring_countries:
+                        if self.relations[warring_country] == self.Relations.ALLIED:
+                            continue
                         country = instance.countries[warring_country]
                         instance.countries.set_two_way_relation(self, country, self.Relations.WAR)
                         instance.event(f"{self.name} has declared war on {country.name} to support their ally of {ally.name}!")
@@ -210,8 +212,27 @@ class MapGameInstance:
             country_a.relations[country_b.id] = relation
             country_b.relations[country_a.id] = relation
 
+        def get_allies(self, country: Country, found_countries: set[Country] | None):
+            if found_countries == None:
+                found_countries = {country}
+            else:
+                found_countries |= {country}
+            for id, relation in country.relations.items():
+                if relation != Country.Relations.ALLIED:
+                    continue
+                if self[id] in found_countries:
+                    continue
+                found_countries |= self.get_allies(self[id], found_countries)
+            return found_countries
+        
         def declare_peace(self, instance: "MapGameInstance", country_a: Country, country_b: Country):
-            ...
+            country_set_a = self.get_allies(country_a)
+            country_set_b = self.get_allies(country_b)
+            for country_a in country_set_a:
+                for country_b in country_set_b:
+                    if country_a.relations[country_b.id] != Country.Relations.WAR:
+                        continue
+                    self.set_two_way_relation(country_a, country_b, Country.Relations.ENEMIES)
         
         def to_dict(self) -> dict[int, Country]:
             """Returns all countries as a dictionary keyed by their IDs."""
